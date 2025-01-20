@@ -3,7 +3,11 @@ const destinations = [
   { id: 2, name: "New York", image: "/src/assets/New York.jpg" },
   { id: 3, name: "Tokyo", image: "/src/assets/Tokyo.jpg" },
 ];
-
+const hotels = [
+    { id: 1, name: "Hilton, Phuket", image: "/src/assets/Hilton.webp" },
+    { id: 2, name: "Hyatt, Hawaii", image: "/src/assets/Hyatt_Hawaii.webp" },
+    { id: 3, name: "Marriot, Bora Bora", image: "/src/assets/Marriot_BoraBora.webp" },
+  ];
 const Home = () => {
   return (
       <>
@@ -28,22 +32,49 @@ const Home = () => {
               <h2 className="text-2xl font-bold mb-6">Popular Destinations</h2>
               <div className="grid grid-cols-3 gap-6">
                   {destinations.map((destination) => (
-                      <div key={destination.id} className="border rounded shadow">
-                          <img
-                              src={destination.image}
-                              alt={destination.name}
-                              className="rounded-t h-48 w-full object-cover"
-                          />
-                          <div className="p-4">
-                              <h3 className="text-lg font-bold">{destination.name}</h3>
-                              <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
-                                  Explore
-                              </button>
-                          </div>
-                      </div>
+                    <div
+                        key={destination.id}
+                        className="border rounded shadow hover:shadow-lg hover:scale-105 transform transition duration-300"
+                    >
+                        <img
+                            src={destination.image}
+                            alt={destination.name}
+                            className="rounded-t h-48 w-full object-cover"
+                        />
+                        <div className="p-4">
+                            <h3 className="text-lg font-bold">{destination.name}</h3>
+                            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
                   ))}
               </div>
           </div>
+            {/* Featured Hotels */}
+            <div className="p-8">
+                <h2 className="text-2xl font-bold mb-6">Popular Hotels</h2>
+                <div className="grid grid-cols-3 gap-6">
+                    {hotels.map((hotel) => (
+                    <div
+                        key={hotel.id}
+                        className="border rounded shadow hover:shadow-lg hover:scale-105 transform transition duration-300"
+                    >
+                        <img
+                            src={hotel.image}
+                            alt={hotel.name}
+                            className="rounded-t h-48 w-full object-cover"
+                        />
+                        <div className="p-4">
+                            <h3 className="text-lg font-bold">{hotel.name}</h3>
+                            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                Explore
+                            </button>
+                        </div>
+                    </div>
+                    ))}
+                </div>
+            </div>
       </>
   );
 };
