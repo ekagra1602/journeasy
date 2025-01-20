@@ -1,14 +1,14 @@
 const destinations = [
-  { id: 1, name: "Paris", image: "https://source.unsplash.com/300x200/?paris" },
-  { id: 2, name: "New York", image: "https://source.unsplash.com/300x200/?newyork" },
-  { id: 3, name: "Tokyo", image: "https://source.unsplash.com/300x200/?tokyo" },
+  { id: 1, name: "Paris", image: "/src/assets/Paris.jpg" },
+  { id: 2, name: "New York", image: "/src/assets/New York.jpg" },
+  { id: 3, name: "Tokyo", image: "/src/assets/Tokyo.jpg" },
 ];
 
 const Home = () => {
   return (
       <>
           {/* Hero Section */}
-          <div className="bg-[url('https://source.unsplash.com/1600x900/?travel')] h-[500px] bg-cover bg-center relative">
+          <div className="h-[500px] bg-[url('/src/assets/waterfall_bg.jpg')] bg-cover bg-center relative">
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center">
                   <h1 className="text-white text-4xl font-bold">Plan Your Next Adventure</h1>
                   <p className="text-white mt-4 text-lg">Find the best destinations, hotels, and experiences</p>
