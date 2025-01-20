@@ -28,7 +28,7 @@ const Home = () => {
           </div>
 
           {/* Featured Destinations */}
-          <div className="p-8">
+          <div className="p-5">
               <h2 className="text-2xl font-bold mb-6">Popular Destinations</h2>
               <div className="grid grid-cols-3 gap-6">
                   {destinations.map((destination) => (
@@ -43,16 +43,24 @@ const Home = () => {
                         />
                         <div className="p-4">
                             <h3 className="text-lg font-bold">{destination.name}</h3>
-                            <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
-                                Explore
-                            </button>
+                            <div className="mt-4 flex space-x-4">
+                                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    Flights
+                                </button>
+                                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    Hotels
+                                </button>
+                                <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    Events
+                                </button>
+                            </div>
                         </div>
                     </div>
                   ))}
               </div>
           </div>
             {/* Featured Hotels */}
-            <div className="p-8">
+            <div className="p-5">
                 <h2 className="text-2xl font-bold mb-6">Popular Hotels</h2>
                 <div className="grid grid-cols-3 gap-6">
                     {hotels.map((hotel) => (

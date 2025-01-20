@@ -6,6 +6,7 @@ import SearchResults from '@/pages/SearchResults.jsx';
 import BookingDetails from '@/pages/BookingDetails.jsx';
 import Dashboard from '@/pages/Dashboard.jsx';
 import Navbar from '@/components/Navbar.jsx';
+import Footer from '@/components/Footer.jsx';
 
 const App = () => {
     return (
@@ -18,6 +19,7 @@ const App = () => {
                 <Route path="/details/:id" element={<BookingDetails />} />
                 <Route path="/dashboard" element={<Dashboard />} />
             </Routes>
+            <Footer />
         </>
     );
 };
