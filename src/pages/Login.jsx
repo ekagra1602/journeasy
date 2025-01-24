@@ -1,6 +1,6 @@
 function Login() {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex items-center justify-center min-h-screen bg-blue-200">
       <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h1 className="text-3xl font-bold mb-4 text-center">Login</h1>
         <p className="mb-6 text-gray-600 text-center">
@@ -43,5 +43,21 @@ function Login() {
     </div>
   );
 }
+import api from '../api';
+
+const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+        const response = await api.post('/login', {
+            email,
+            password,
+        });
+        alert('Login successful');
+        // Store token or handle further
+    } catch (error) {
+        console.error(error.response.data);
+        alert('Login failed');
+    }
+};
 
 export default Login;

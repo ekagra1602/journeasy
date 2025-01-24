@@ -15,7 +15,7 @@ const Home = () => {
           <div className="h-[500px] bg-[url('/src/assets/waterfall_bg.jpg')] bg-cover bg-center relative">
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center">
                   <h1 className="text-white text-4xl font-bold">Plan Your Next Adventure</h1>
-                  <p className="text-white mt-4 text-lg">Find the best destinations, hotels, and experiences</p>
+                  <p className="text-white mt-4 text-lg">Find the best destinations, hotels, events and experiences</p>
                   <div className="mt-6 flex">
                       <input
                           type="text"
