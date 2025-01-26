@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from '@/pages/Home.jsx';
 import Login from '@/pages/Login.jsx';
+import Signup from '@/pages/Signup.jsx';
 import SearchResults from '@/pages/SearchResults.jsx';
 import BookingDetails from '@/pages/BookingDetails.jsx';
 import Dashboard from '@/pages/Dashboard.jsx';
@@ -15,6 +16,7 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
                 <Route path="/results" element={<SearchResults />} />
                 <Route path="/details/:id" element={<BookingDetails />} />
                 <Route path="/dashboard" element={<Dashboard />} />

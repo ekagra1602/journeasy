@@ -1,3 +1,4 @@
+import Signup from '@/pages/Signup.jsx';
 function Login() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-blue-200">
@@ -37,7 +38,8 @@ function Login() {
           </button>
         </form>
         <p className="mt-4 text-gray-600 text-center">
-          Don't have an account? <a href="#" className="text-blue-500 hover:underline">Sign Up</a>
+          Don't have an account? 
+          <a href="Signup" className="text-blue-500 hover:underline">Sign Up</a>
         </p>
       </div>
     </div>
