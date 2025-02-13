@@ -28,7 +28,7 @@ Backend: Node.js, Express.js
 
 Database: MongoDB
 
-AI/ML: TensorFlow, Scikit-learn (for recommendation engine)
+AI/ML: TensorFlow (for recommendation engine)
 
-Deployment: Vercel (Frontend), AWS/GCP (Backend & ML models)
+Deployment: Vercel
 
