@@ -14,17 +14,26 @@ const hotels = [
 ];
 
 const SearchResults = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('q') || '';
   
   const [filters, setFilters] = useState({
-    type: 'all', // 'all', 'destination', 'hotel'
-    priceRange: 'all', // 'all', 'low', 'medium', 'high'
-    rating: 'all', // 'all', '4+', '4.5+', '4.8+'
+    type: searchParams.get('type') || 'all',
+    priceRange: searchParams.get('price') || 'all',
+    rating: searchParams.get('rating') || 'all'
   });
   
   const [showFilters, setShowFilters] = useState(false);
   const [filteredResults, setFilteredResults] = useState([]);
+
+  const handleFilterChange = (newFilters) => {
+    setFilters(newFilters);
+    const params = new URLSearchParams(searchParams);
+    params.set('type', newFilters.type);
+    params.set('price', newFilters.priceRange);
+    params.set('rating', newFilters.rating);
+    setSearchParams(params);
+  };
 
   const applyFilters = () => {
     let results = [...destinations, ...hotels].filter(item =>
@@ -89,7 +98,7 @@ const SearchResults = () => {
               <label className="block text-sm font-medium mb-2">Type</label>
               <select
                 value={filters.type}
-                onChange={(e) => setFilters({...filters, type: e.target.value})}
+                onChange={(e) => handleFilterChange({...filters, type: e.target.value})}
                 className="w-full p-2 border rounded"
               >
                 <option value="all">All Types</option>
@@ -101,7 +110,7 @@ const SearchResults = () => {
               <label className="block text-sm font-medium mb-2">Price Range</label>
               <select
                 value={filters.priceRange}
-                onChange={(e) => setFilters({...filters, priceRange: e.target.value})}
+                onChange={(e) => handleFilterChange({...filters, priceRange: e.target.value})}
                 className="w-full p-2 border rounded"
               >
                 <option value="all">All Prices</option>
@@ -114,7 +123,7 @@ const SearchResults = () => {
               <label className="block text-sm font-medium mb-2">Rating</label>
               <select
                 value={filters.rating}
-                onChange={(e) => setFilters({...filters, rating: e.target.value})}
+                onChange={(e) => handleFilterChange({...filters, rating: e.target.value})}
                 className="w-full p-2 border rounded"
               >
                 <option value="all">All Ratings</option>
